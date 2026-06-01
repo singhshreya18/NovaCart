@@ -186,6 +186,29 @@ Backend:  http://localhost:4000
 
 ---
 
+## 📸 Project Screenshots
+
+### Home Page
+![Home](screenshots/home.png)
+
+### Products Page
+![Products](screenshots/products.png)
+
+### Shopping Cart
+![Cart](screenshots/cart.png)
+
+### Admin Dashboard
+![Dashboard](screenshots/dashboard.png)
+
+### Additional Screenshot 1
+![Screenshot](screenshots/products(2).png)
+
+### Additional Screenshot 2
+![Screenshot](screenshots/products(3).png)
+
+### Additional Screenshot 3
+![Screenshot](screenshots/products(4).png)
+
 ## 👩‍💻 Developed By
 
 ### Shreya Singh
