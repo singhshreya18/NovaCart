@@ -1,5 +1,5 @@
 {
-  "name": "frontend",
+  "name": "novacart-frontend",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -58,5 +58,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:4000"
+  "proxy": "https://novacart-backend-a90n.onrender.com"
 }
