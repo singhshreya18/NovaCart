@@ -85,8 +85,11 @@ export const loadUser = () => async (dispatch) => {
     dispatch({ type: LOAD_USER_REQUEST });
 
     const { data } = await axios.get(
-      `${API_URL}/api/v1/me`
-    );
+  `${API_URL}/api/v1/me`,
+  {
+    withCredentials: true,
+  }
+);
 
     dispatch({
       type: LOAD_USER_SUCCESS,
@@ -214,7 +217,12 @@ export const getAllUsers = () => async (dispatch) => {
 export const getUserDetails = (id) => async (dispatch) => {
   try {
     dispatch({ type: USER_DETAILS_REQUEST });
-    const { data } = await axios.get(`${API_URL}/api/v1/admin/user/${id}`);
+    const { data } = await axios.get(
+  `${API_URL}/api/v1/admin/user/${id}`,
+  {
+    withCredentials: true,
+  }
+);
 
     dispatch({ type: USER_DETAILS_SUCCESS, payload: data.user });
   } catch (error) {
@@ -249,7 +257,12 @@ export const deleteUser = (id) => async (dispatch) => {
   try {
     dispatch({ type: DELETE_USER_REQUEST });
 
-    const { data } = await axios.delete(`${API_URL}/api/v1/admin/user/${id}`);
+    const { data } = await axios.delete(
+  `${API_URL}/api/v1/admin/user/${id}`,
+  {
+    withCredentials: true,
+  }
+);
 
     dispatch({ type: DELETE_USER_SUCCESS, payload: data });
   } catch (error) {
