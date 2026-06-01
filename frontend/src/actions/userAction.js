@@ -39,6 +39,9 @@ import {
 import axios from "axios";
 import API_URL from "../api";
 
+console.log("API_URL =", API_URL);
+console.log("STRING TEST =", "HELLO");
+
 // Login
 export const login = (email, password) => async (dispatch) => {
   try {
@@ -46,11 +49,11 @@ export const login = (email, password) => async (dispatch) => {
 
     const config = { headers: { "Content-Type": "application/json" } };
 
-    const { data } = await axios.post(
-      `${API_URL}/api/v1/login`,
-      { email, password },
-      config
-    );
+   const { data } = await axios.post(
+  "https://novacart-backend-a90n.onrender.com/api/v1/login",
+  { email, password },
+  config
+);
 
     dispatch({ type: LOGIN_SUCCESS, payload: data.user });
   } catch (error) {

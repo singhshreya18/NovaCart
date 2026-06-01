@@ -9,9 +9,14 @@ import API_URL from "../api";
 
 // Add to Cart
 export const addItemsToCart = (id, quantity) => async (dispatch, getState) => {
-  const { data } = await axios.get(
+  const response = await axios.get(
     `${API_URL}/api/v1/product/${id}`
   );
+
+  console.log("FULL RESPONSE:", response);
+  console.log("DATA:", response.data);
+
+  const data = response.data;
 
   dispatch({
     type: ADD_TO_CART,

@@ -13,11 +13,9 @@ import MetaData from "../layout/MetaData";
 const Dashboard = () => {
   const dispatch = useDispatch();
 
-  const { products } = useSelector((state) => state.products);
-
-  const { orders } = useSelector((state) => state.allOrders);
-
-  const { users } = useSelector((state) => state.allUsers);
+ const { products = [] } = useSelector((state) => state.products);
+const { orders = [] } = useSelector((state) => state.allOrders);
+const { users = [] } = useSelector((state) => state.allUsers);
 
   let outOfStock = 0;
 
@@ -58,7 +56,7 @@ const Dashboard = () => {
       {
         backgroundColor: ["#00A6B4", "#6800B4"],
         hoverBackgroundColor: ["#4B5000", "#35014F"],
-        data: [outOfStock, products.length - outOfStock],
+        data: [outOfStock, (products?.length || 0) - outOfStock],
       },
     ],
   };
