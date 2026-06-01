@@ -35,13 +35,13 @@ const UserOptions = ({ user }) => {
     { icon: <ExitToAppIcon />, name: "Logout", func: logoutUser },
   ];
 
-  if (user.role === "admin") {
-    options.unshift({
-      icon: <DashboardIcon />,
-      name: "Dashboard",
-      func: dashboard,
-    });
-  }
+ if (user && user.role === "admin") {
+  options.unshift({
+    icon: <DashboardIcon />,
+    name: "Dashboard",
+    func: dashboard,
+  });
+}
 
   function dashboard() {
     history.push("/admin/dashboard");
@@ -75,7 +75,7 @@ const UserOptions = ({ user }) => {
         icon={
           <img
             className="speedDialIcon"
-            src={user.avatar.url ? user.avatar.url : "/Profile.png"}
+            src={user?.avatar?.url ? user.avatar.url : "/Profile.png"}
             alt="Profile"
           />
         }
