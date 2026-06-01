@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const fileUpload = require("express-fileupload");
@@ -11,6 +12,15 @@ const errorMiddleware = require("./middleware/error");
 if (process.env.NODE_ENV !== "PRODUCTION") {
   require("dotenv").config({ path: "backend/config/config.env" });
 }
+app.use(
+  cors({
+    origin: [
+      "https://novacart-frontend.onrender.com",
+      "http://localhost:3000",
+    ],
+    credentials: true,
+  })
+);
 
 // Middleware
 app.use(express.json());
