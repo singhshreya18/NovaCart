@@ -1,45 +1,52 @@
 import React from "react";
 import "./aboutSection.css";
 import { Button, Typography, Avatar } from "@material-ui/core";
-import YouTubeIcon from "@material-ui/icons/YouTube";
 import InstagramIcon from "@material-ui/icons/Instagram";
+
 const About = () => {
   const visitInstagram = () => {
-    window.location = "https://instagram.com/meabhisingh";
+    window.location =
+      "https://www.instagram.com/shreya.singh_004?igsh=MW5pZ3AxaXBnMGdhNw==";
   };
+
   return (
     <div className="aboutSection">
       <div></div>
       <div className="aboutSectionGradient"></div>
+
       <div className="aboutSectionContainer">
-        <Typography component="h1">About Us</Typography>
+        <Typography component="h1">About NovaCart</Typography>
 
         <div>
           <div>
             <Avatar
               style={{ width: "10vmax", height: "10vmax", margin: "2vmax 0" }}
-              src="https://res.cloudinary.com/tripleayt/image/upload/v1631555947/products/jpyibarlaxawvcvqjv5b.png"
-              alt="Founder"
+              src="https://cdn-icons-png.flaticon.com/512/3081/3081559.png"
+              alt="NovaCart"
             />
-            <Typography>Abhishek Singh</Typography>
+
+            <Typography>NovaCart Team</Typography>
+
             <Button onClick={visitInstagram} color="primary">
               Visit Instagram
             </Button>
+
             <span>
-              This is a sample wesbite made by @meabhisingh. Only with the
-              purpose to teach MERN Stack on the channel 6 Pack Programmer
+              NovaCart is a modern e-commerce platform built using the MERN
+              Stack. Our goal is to provide customers with a seamless shopping
+              experience, secure payments, fast delivery, and high-quality
+              products at affordable prices.
             </span>
           </div>
-          <div className="aboutSectionContainer2">
-            <Typography component="h2">Our Brands</Typography>
-            <a
-              href="https://www.youtube.com/channel/UCO7afj9AUo0zV69pqEYhcjw"
-              target="blank"
-            >
-              <YouTubeIcon className="youtubeSvgIcon" />
-            </a>
 
-            <a href="https://instagram.com/meabhisingh" target="blank">
+          <div className="aboutSectionContainer2">
+            <Typography component="h2">Connect With Us</Typography>
+
+            <a
+              href="https://www.instagram.com/shreya.singh_004?igsh=MW5pZ3AxaXBnMGdhNw=="
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <InstagramIcon className="instagramSvgIcon" />
             </a>
           </div>

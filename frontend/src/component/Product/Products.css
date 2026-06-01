@@ -14,6 +14,7 @@
   padding: 0 5vmax;
   justify-content: center;
   min-height: 30vh;
+  margin-left: 250px;
 }
 
 .paginationBox {
@@ -67,10 +68,10 @@
 }
 
 .filterBox {
-  width: 10vmax;
+  width: 220px;
   position: absolute;
-  top: 10vmax;
-  left: 4vmax;
+  top: 150px;
+  left: 20px;
 }
 
 .categoryBox {

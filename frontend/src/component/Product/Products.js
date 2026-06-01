@@ -18,17 +18,19 @@ const categories = [
   "Attire",
   "Camera",
   "SmartPhones",
+  "Accessories",
 ];
 
 const Products = ({ match }) => {
   const dispatch = useDispatch();
-
   const alert = useAlert();
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [price, setPrice] = useState([0, 25000]);
-  const [category, setCategory] = useState("");
 
+  // Increased price range for expensive products
+  const [price, setPrice] = useState([0, 200000]);
+
+  const [category, setCategory] = useState("");
   const [ratings, setRatings] = useState(0);
 
   const {
@@ -49,6 +51,7 @@ const Products = ({ match }) => {
   const priceHandler = (event, newPrice) => {
     setPrice(newPrice);
   };
+
   let count = filteredProductsCount;
 
   useEffect(() => {
@@ -58,7 +61,16 @@ const Products = ({ match }) => {
     }
 
     dispatch(getProduct(keyword, currentPage, price, category, ratings));
-  }, [dispatch, keyword, currentPage, price, category, ratings, alert, error]);
+  }, [
+    dispatch,
+    keyword,
+    currentPage,
+    price,
+    category,
+    ratings,
+    alert,
+    error,
+  ]);
 
   return (
     <Fragment>
@@ -66,7 +78,8 @@ const Products = ({ match }) => {
         <Loader />
       ) : (
         <Fragment>
-          <MetaData title="PRODUCTS -- ECOMMERCE" />
+          <MetaData title="PRODUCTS -- NovaCart" />
+
           <h2 className="productsHeading">Products</h2>
 
           <div className="products">
@@ -78,16 +91,18 @@ const Products = ({ match }) => {
 
           <div className="filterBox">
             <Typography>Price</Typography>
+
             <Slider
               value={price}
               onChange={priceHandler}
               valueLabelDisplay="auto"
               aria-labelledby="range-slider"
               min={0}
-              max={25000}
+              max={200000}
             />
 
             <Typography>Categories</Typography>
+
             <ul className="categoryBox">
               {categories.map((category) => (
                 <li
@@ -101,7 +116,10 @@ const Products = ({ match }) => {
             </ul>
 
             <fieldset>
-              <Typography component="legend">Ratings Above</Typography>
+              <Typography component="legend">
+                Ratings Above
+              </Typography>
+
               <Slider
                 value={ratings}
                 onChange={(e, newRating) => {
@@ -114,6 +132,7 @@ const Products = ({ match }) => {
               />
             </fieldset>
           </div>
+
           {resultPerPage < count && (
             <div className="paginationBox">
               <Pagination

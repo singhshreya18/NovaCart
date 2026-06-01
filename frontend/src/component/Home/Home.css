@@ -1,138 +1,244 @@
 .banner {
-  background-image: url("../../images/cover.jfif");
+  background-image: linear-gradient(
+      rgba(15, 23, 42, 0.75),
+      rgba(15, 23, 42, 0.75)
+    ),
+    url("../../images/cover.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vmin;
+  height: 100vh;
+
   display: flex;
   flex-direction: column;
-  text-align: center;
   align-items: center;
   justify-content: center;
+  text-align: center;
+
   color: white;
-}
-
-.banner > h1 {
-  margin: 5vmax;
-
-  font: 600 2.5vmax "Roboto";
+  padding: 0 2rem;
 }
 
 .banner > p {
-  font: 300 1.4vmax "Lucida Sans";
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #93c5fd;
+  margin-bottom: 1rem;
+}
+
+.banner > h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  max-width: 900px;
+}
+
+.banner > h3 {
+  max-width: 700px;
+  line-height: 1.8;
+  font-size: 1.1rem;
 }
 
 .banner > a > button {
-  margin-bottom: 5vmax;
+  margin-top: 2rem;
   cursor: pointer;
-  background-color: white;
-  border: 1px solid white;
-  border-radius: 0;
-  padding: 1vmax;
-  transition: all 0.5s;
-  width: 9vmax;
-  font: 500 1vmax "Roboto";
-}
-.banner > a > button:hover {
-  background-color: rgba(255, 255, 255, 0);
+
+  background: #2563eb;
   color: white;
+
+  border: none;
+  border-radius: 8px;
+
+  padding: 14px 28px;
+  width: auto;
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  transition: all 0.3s ease;
 }
 
-.banner::after {
-  content: "";
-  width: 100vw;
-  height: 100vmin;
-  background-color: #ffffff;
-  position: absolute;
-  top: 0%;
-  left: 0;
-  clip-path: polygon(100% 68%, 0 100%, 100% 100%);
-  max-width: 100%;
+.banner > a > button:hover {
+  background: #1d4ed8;
+  transform: translateY(-3px);
 }
 
 .homeHeading {
   text-align: center;
-  font-family: Roboto;
-  font-size: 1.4vmax;
-  border-bottom: 1px solid rgba(21, 21, 21, 0.5);
-  width: 20vmax;
-  padding: 1vmax;
-  margin: 5vmax auto;
-  color: rgb(0, 0, 0, 0.7);
+  font-size: 2rem;
+  font-weight: 700;
+
+  width: fit-content;
+
+  padding-bottom: 10px;
+  margin: 4rem auto;
+
+  border-bottom: 3px solid #2563eb;
+
+  color: #111827;
 }
 
 .container {
   display: flex;
-  margin: 2vmax auto;
-  width: 80vw;
   flex-wrap: wrap;
   justify-content: center;
-  max-width: 100%;
+
+  width: 90%;
+  margin: auto;
+  gap: 20px;
 }
 
 .productCard {
-  width: 14vmax;
+  width: 260px;
+
   display: flex;
   flex-direction: column;
+
   text-decoration: none;
-  color: rgb(48, 48, 48);
-  margin: 2vmax;
-  transition: all 0.5s;
-  padding-bottom: 0.5vmax;
-}
+  color: #1f2937;
 
-.productCard > img {
-  width: 14vmax;
-}
+  background: white;
 
-.productCard > div {
-  margin: 0.5vmax;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
+  border-radius: 12px;
+  overflow: hidden;
 
-.productCardSpan {
-  margin: 0.5vmax;
-  font: 300 0.7vmax "Roboto";
-}
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 
-.productCard > p {
-  font-family: "Roboto";
-  font-size: 1.2vmax;
-  margin: 1vmax 0.5vmax;
-  margin-bottom: 0;
-}
-
-.productCard > span {
-  margin: 0.5vmax;
-  color: tomato;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 1vmax;
+  transition: all 0.3s ease;
 }
 
 .productCard:hover {
-  box-shadow: 0 0 5px rgba(15, 15, 15, 0.26);
+  transform: translateY(-8px);
 
-  transform: translateY(-1vmax);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
 }
 
-@media screen and (max-width: 600px) {
-  .productCard > p {
-    font-size: 1.7vmax;
+.productCard > img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.productCard > p {
+  font-size: 1rem;
+  font-weight: 600;
+
+  margin: 10px;
+}
+
+.productCard > div {
+  display: flex;
+  align-items: center;
+
+  margin: 0 10px;
+}
+
+.productCardSpan {
+  margin-left: 8px;
+  font-size: 0.9rem;
+}
+
+.productCard > span {
+  color: #2563eb;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .banner > h1 {
+    font-size: 2.2rem;
   }
 
-  .productCard > div {
-    margin: 0vmax;
-    display: block;
+  .banner > h3 {
+    font-size: 0.95rem;
   }
 
-  .productCard > span {
-    font-size: 1.5vmax;
+  .productCard {
+    width: 90%;
+    max-width: 320px;
   }
+}
+.whyNovaCart {
+  width: 90%;
+  margin: 4rem auto;
+  text-align: center;
+}
 
-  .productCard > div > span {
-    margin: 0 0.5vmax;
-    font: 300 1vmax "Roboto";
-  }
+.whyNovaCart h2 {
+  font-size: 2rem;
+  color: #111827;
+  margin-bottom: 2rem;
+}
+
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.featureCard {
+  width: 250px;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+}
+
+.featureCard:hover {
+  transform: translateY(-5px);
+}
+
+.featureCard h3 {
+  color: #2563eb;
+  margin-bottom: 10px;
+}
+
+.featureCard p {
+  color: #555;
+}
+/* Categories Section */
+.categoriesSection {
+  width: 90%;
+  margin: 5rem auto;
+  text-align: center;
+}
+
+.categoriesSection h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #111827;
+}
+
+.categories {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.categoryCard {
+  background: #2563eb;
+  color: white;
+  text-decoration: none;
+
+  padding: 20px 30px;
+  border-radius: 12px;
+
+  font-weight: 600;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.categoryCard:hover {
+  transform: translateY(-5px);
+  background: #1d4ed8;
 }
