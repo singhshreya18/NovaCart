@@ -195,6 +195,8 @@ export const resetPassword = (token, passwords) => async (dispatch) => {
 export const getAllUsers = () => async (dispatch) => {
   try {
     dispatch({ type: ALL_USERS_REQUEST });
+    console.log("API_URL =", API_URL);
+    
     const { data } = await axios.get(`${API_URL}/api/v1/admin/users`);
 
     dispatch({ type: ALL_USERS_SUCCESS, payload: data.users });
