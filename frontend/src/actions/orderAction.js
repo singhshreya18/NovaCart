@@ -21,7 +21,7 @@ import {
 } from "../constants/orderConstants";
 
 import axios from "axios";
-import API_URL from "../api";
+import API_URL from "../api.js";
 
 // Create Order
 export const createOrder = (order) => async (dispatch) => {
@@ -65,8 +65,11 @@ export const getAllOrders = () => async (dispatch) => {
   try {
     dispatch({ type: ALL_ORDERS_REQUEST });
 
-    const { data } = await axios.get(
-  `${API_URL}/api/v1/admin/orders`,
+    console.log("ORDER API_URL =", API_URL);
+    console.log("ORDER TYPE =", typeof API_URL);
+
+   const { data } = await axios.get(
+  "https://novacart-backend-a90n.onrender.com/api/v1/admin/orders",
   {
     withCredentials: true,
   }
