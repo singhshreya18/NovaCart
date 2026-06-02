@@ -15,14 +15,14 @@ const options = {
   logoHoverColor: "#2563EB",
 
   link1Text: "Home",
-  link2Text: "Shop",
-  link3Text: "Contact",
-  link4Text: "About",
+link2Text: "Shop",
+link3Text: "Contact",
+link4Text: "Login",
 
-  link1Url: "/",
-  link2Url: "/products",
-  link3Url: "/contact",
-  link4Url: "/about",
+link1Url: "/",
+link2Url: "/products",
+link3Url: "/contact",
+link4Url: "/login",
 
   link1Size: "1.1vmax",
 
