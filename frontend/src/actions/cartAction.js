@@ -15,6 +15,7 @@ export const addItemsToCart = (id, quantity) => async (dispatch, getState) => {
 
   console.log("FULL RESPONSE:", response);
   console.log("DATA:", response.data);
+  console.log("PRODUCT:", response.data.product);
 
   const data = response.data;
 
