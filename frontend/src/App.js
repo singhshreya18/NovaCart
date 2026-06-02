@@ -43,6 +43,9 @@ import NotFound from "./component/layout/Not Found/NotFound";
 function App() {
   const { isAuthenticated, user } = useSelector((state) => state.user);
 
+  console.log("APP AUTH =", isAuthenticated);
+  console.log("APP USER =", user);
+
 
   useEffect(() => {
     WebFont.load({
