@@ -69,13 +69,18 @@ const UserOptions = ({ user }) => {
       <Backdrop open={open} style={{ zIndex: 10 }} />
 
       <SpeedDial
-        ariaLabel="User Options"
-        onClose={() => setOpen(false)}
-        onOpen={() => setOpen(true)}
-        open={open}
-        direction="down"
-        className="speedDial"
-        style={{ zIndex: 11 }}
+  ariaLabel="User Options"
+  onClose={() => setOpen(false)}
+  onOpen={() => setOpen(true)}
+  open={open}
+  direction="down"
+  className="speedDial"
+  style={{
+    position: "fixed",
+    right: "3vmax",
+    top: "3vmax",
+    zIndex: 99999,
+  }}
         icon={
           <img
             className="speedDialIcon"
