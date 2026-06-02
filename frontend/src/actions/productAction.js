@@ -90,10 +90,11 @@ export const createProduct = (productData) => async (dispatch) => {
 
     const config = {
       headers: { "Content-Type": "application/json" },
+      withCredentials: true,
     };
 
     const { data } = await axios.post(
-      `/api/v1/admin/product/new`,
+      `${API_URL}/api/v1/admin/product/new`,
       productData,
       config
     );
@@ -117,10 +118,11 @@ export const updateProduct = (id, productData) => async (dispatch) => {
 
     const config = {
       headers: { "Content-Type": "application/json" },
+      withCredentials: true,
     };
 
     const { data } = await axios.put(
-      `/api/v1/admin/product/${id}`,
+      `${API_URL}/api/v1/admin/product/${id}`,
       productData,
       config
     );
@@ -223,8 +225,8 @@ export const deleteReviews = (reviewId, productId) => async (dispatch) => {
     dispatch({ type: DELETE_REVIEW_REQUEST });
 
     const { data } = await axios.delete(
-      `/api/v1/reviews?id=${reviewId}&productId=${productId}`
-    );
+  `${API_URL}/api/v1/reviews?id=${reviewId}&productId=${productId}`
+);
 
     dispatch({
       type: DELETE_REVIEW_SUCCESS,

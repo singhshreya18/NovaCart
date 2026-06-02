@@ -21,6 +21,7 @@ import {
 } from "../constants/orderConstants";
 
 import axios from "axios";
+import API_URL from "../api";
 
 // Create Order
 export const createOrder = (order) => async (dispatch) => {
@@ -64,7 +65,12 @@ export const getAllOrders = () => async (dispatch) => {
   try {
     dispatch({ type: ALL_ORDERS_REQUEST });
 
-    const { data } = await axios.get("/api/v1/admin/orders");
+    const { data } = await axios.get(
+  `${API_URL}/api/v1/admin/orders`,
+  {
+    withCredentials: true,
+  }
+);
 
     dispatch({ type: ALL_ORDERS_SUCCESS, payload: data.orders });
   } catch (error) {
