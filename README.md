@@ -1,4 +1,15 @@
-# NovaCart 🛒
+# NovaCart
+
+Live Demo: https://novacart-frontend.onrender.com
+
+A full-stack MERN E-Commerce platform featuring:
+- User Authentication
+- Product Management
+- Shopping Cart
+- Order Tracking
+- Payment Integration
+- Admin Dashboard
+- Responsive Design
 
 NovaCart is a full-stack MERN E-Commerce web application that provides a complete online shopping experience for customers and an admin dashboard for store management.
 
